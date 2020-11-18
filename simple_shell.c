@@ -24,7 +24,7 @@ void simple_shell(void)
 	do {
 		write(1, "$ ", 2);
 		string = _getline_v2();
-		env = split_line(line);
+		env = split_line_v2(string);
 		status = launch_prog(env);
 		free(string);
 		free(env);

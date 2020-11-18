@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stddef.h>
-#define TOKENS_BUFFER_SIZE 64
-#define TOKEN_DELIMITERS " \t\r\n\a"
+#include "simple_shell.h"
 
 /**
  * _getline - Gets line of user input

@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 /**
  * exit_simple_shell - This will run the builtin exit
