@@ -4,8 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct built_in
+/**
+ * struct shell -
+ * @build:
+ * @built:
+ *
+ */
+
+typedef struct shell
 {
 	char *build;
 	void (*built)(char **builds, char *array, char **end);
-} built_in_t
+} shell_t
