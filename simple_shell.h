@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#define LINE_SIZE 1024
 
 /**
  * struct shell -
