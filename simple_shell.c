@@ -18,15 +18,15 @@
 void simple_shell(void)
 {
 	char *string;
-	char **end;
+	char **env;
 	int status;
 
 	do {
 		write(1, "$ ", 2);
 		string = _getline_v2();
-		end = split_line(line);
-		status = launch_prog(end);
+		env = split_line(line);
+		status = launch_prog(env);
 		free(string);
-		free(end);
+		free(env);
 	} while (status);
 }

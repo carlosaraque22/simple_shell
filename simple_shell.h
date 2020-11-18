@@ -14,7 +14,7 @@
 typedef struct shell
 {
 	char *build;
-	void (*built)(char **builds, char *string, char **end);
+	void (*built)(char **builds, char *string, char **env);
 } shell_t
 
 #endif
