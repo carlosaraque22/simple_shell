@@ -16,3 +16,5 @@ typedef struct shell
 	char *build;
 	void (*built)(char **builds, char *array, char **end);
 } shell_t
+
+#endif
