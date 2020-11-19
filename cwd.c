@@ -5,7 +5,7 @@
  * Return: the current working dir.
  */
 
-char cwd(char *file, char *er)
+char *cwd(char *file, char *er)
 {
 	DIR *dir;
 	struct dirent *sd;
