@@ -23,7 +23,7 @@ void simple_shell(int ac, char **av, char **env)
 		write(1, "$ ", 2);
 		string = getline_v2();
 		args = split_line_v2(string);
-		flow = bridge(args[0], args);
+		flow = builtin_caller(args[0], args);
 		if (flow == 2)
 		{
 			filename = args[0];
