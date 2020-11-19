@@ -8,7 +8,7 @@
  * Return: Void
  */
 
-void exit_simple_shell(char **builds, char *string, char **env)
+void exit_simple_shell(char **args, char *string, char **env)
 {
 	free(builds);
 	free(string);
