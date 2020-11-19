@@ -33,7 +33,8 @@ void simple_shell(int ac, char **av, char **env)
 				args[0] = search_cwd(filename);
 			}
 		}
-		status = execute_program(args, string, env);
+		if (args[0] != er)
+			status = execute_program(args, string, env, flow);
 		free(string);
 		free(args);
 	} while (status);
