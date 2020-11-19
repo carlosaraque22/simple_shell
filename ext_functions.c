@@ -57,8 +57,8 @@ char **split_line_v2(char *string)
 int builtin_checker(char **args, char *string, char **env)
 {
 	shell_t list[] = {
-		{"exit", exit_shell},
-		{"env", env_shell},
+		{"exit", exit_simple_shell},
+		{"env", env_simple_shell},
 		{NULL, NULL}
 	};
 	int i;
