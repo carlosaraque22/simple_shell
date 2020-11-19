@@ -117,14 +117,14 @@ int builtin_checker(char **args)
 {
 	int i;
 	shell_t list[] = {
-		{"exit", exit_shell},
-		{"env", env_shell},
+		{"exit", exit_simple_shell},
+		{"env", env_simple_shell},
 		{NULL, NULL}
 	};
 
-	for (i = 0; list[i].arg != NULL; i++)
+	for (i = 0; list[i].ar != NULL; i++)
 	{
-		if (_strcmp(list[i].arg, args[0]) == 0)
+		if (_strcmp(list[i].ar, args[0]) == 0)
 			return (1);
 	}
 	return (0);
