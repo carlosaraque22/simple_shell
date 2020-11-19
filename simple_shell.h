@@ -3,6 +3,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <dirent.h>
+#include <stddef.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #define TOKENS_BUFFER_SIZE 64
 #define LINE_SIZE 1024
 #define TOKEN_DELIMITERS " \t\r\n\a"
@@ -15,11 +22,11 @@
  *
  */
 
-typedef struct builtins
+typedef struct shell
 {
 	char *arg;
 	void (*builtin)(char **args, char *line, char **env);
-} builtins_t;
+} shell_t;
 void simple_shell(void)
 char *getline_v2(void)
 void exit_simple_shell(char **builds, char *string, char **env)
