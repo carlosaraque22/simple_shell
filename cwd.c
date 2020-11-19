@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 /**
  * cwd - search the current working directory.
  * @file: this is the file name.
