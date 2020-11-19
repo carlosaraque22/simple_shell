@@ -6,7 +6,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "shell.h"
+#include "simple_shell.h"
 
 /**
  * execute_prog - Executes binary or builtin
