@@ -25,7 +25,7 @@ typedef struct shell
 {
 	char *ar;
 	void (*built)(char **args, char *string, char **env);
-} shell_t
+} shell_t;
 
 void simple_shell(int ac, char **av, char **env);
 char *getline_v2(void);
@@ -39,4 +39,5 @@ int builtin_checker(char **args, char *string, char **env);
 int execute_program(char **args, char *string);
 char *_strstr(char *haystack, char *needle);
 int _strlen(char *s);
+char *_getenv(char *env);
 #endif
