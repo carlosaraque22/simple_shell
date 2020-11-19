@@ -26,6 +26,7 @@ typedef struct shell
 	char *ar;
 	void (*built)(char **args, char *string, char **env);
 } shell_t
+
 void simple_shell(void);
 char *getline_v2(void);
 void exit_simple_shell(char **args, char *string, char **env);
