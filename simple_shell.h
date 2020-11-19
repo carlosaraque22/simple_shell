@@ -37,4 +37,7 @@ int launch_prog(char **args);
 int builtin_checker(char **args, char *string, char **env);
 int execute_program(char **args, char *string);
 int main(int arc, char **arv, char **env);
+int _strcmp(char *s1, char *s2);
+char *_strstr(char *haystack, char *needle);
+int _strlen(char *s);
 #endif
