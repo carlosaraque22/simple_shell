@@ -30,7 +30,7 @@ void simple_shell(int ac, char **av, char **env)
 			args[0] = find_path(args[0], tmp, mistake);
 			if (args[0] == mistake)
 			{
-				args[0] = cwd(filename, misake);
+				args[0] = cwd(filename, mistake);
 				if (args[0] == filename)
 					write(1, mistake, 5);
 			}
