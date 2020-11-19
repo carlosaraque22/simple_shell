@@ -34,5 +34,6 @@ int _strcmp(char *s1, char *s2);
 void prompt(void);
 int launch_prog(char **args);
 int check_for_builtins(char **args, char *string, char **env);
+int execute_program(char **args, char *string);
 int main(int arc, char **arv, char **env);
 #endif
