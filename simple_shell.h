@@ -27,7 +27,7 @@ typedef struct shell
 	void (*built)(char **args, char *string, char **env);
 } shell_t
 
-void simple_shell(void);
+void shell(int ac, char **av, char **env);
 char *getline_v2(void);
 void exit_simple_shell(char **args, char *string, char **env);
 void env_simple_shell(char **args, char *string, char **env);
