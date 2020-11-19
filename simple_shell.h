@@ -33,5 +33,6 @@ void exit_simple_shell(char **builds, char *string, char **env);
 char **split_line_v2(char *string);
 int _strcmp(char *s1, char *s2);
 void prompt(void);
+int launch_prog(char **args);
 
 #endif
