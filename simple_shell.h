@@ -41,5 +41,5 @@ int execute_program(char **args, char *string, char **env, int flow);
 char *_strstr(char *haystack, char *needle);
 int _strlen(char *c);
 char *_getenv(char *env);
-int builtin_caller(char *check, char **args, char *line);
+int builtin_caller(char *check, char **args);
 #endif
