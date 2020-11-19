@@ -17,9 +17,9 @@
  * Return: Void
  */
 
-void shell(int ac, char **av, char **env)
+void simple_shell(int ac, char **av, char **env)
 {
-	char *line;
+	char *string;
 	char **args;
 	int status = 1;
 	char *tmp = NULL;
@@ -29,8 +29,8 @@ void shell(int ac, char **av, char **env)
 	er = "error";
 	do {
 		write(1, "$ ", 2);
-		line = _getline();
-		args = split_line(line);
+		string = _getline_v2();
+		args = split_line_v2(string);
 		flow = bridge(args[0], args);
 		if (flow == 2)
 		{
@@ -41,8 +41,8 @@ void shell(int ac, char **av, char **env)
 				args[0] = search_cwd(filename);
 			}
 		}
-		status = execute_prog(args, line, env);
-		free(line);
+		status = execute_program(args, string, env);
+		free(string);
 		free(args);
 	} while (status);
 	if (!ac)
