@@ -14,24 +14,23 @@ void simple_shell(int ac, char **av, char **env)
 	char *string;
 	char **args;
 	int status = 1;
-	char *tmp = NULL;
 	char *mistake;
-	char *filename;
+	char *file;
 	int flow;
         mistake = "error";
+
 	do {
-		write(1, "$ ", 2);
+		prompt();
 		string = getline_v2();
 		args = split_line_v2(string);
 		flow = builtin_caller(args[0], args);
 		if (flow == 2)
 		{
-			filename = args[0];
-			args[0] = find_path(args[0], tmp, mistake);
+			file = args[0];
 			if (args[0] == mistake)
 			{
-				args[0] = cwd(filename, mistake);
-				if (args[0] == filename)
+				args[0] = cwd(file, mistake);
+				if (args[0] == file)
 					write(1, mistake, 5);
 			}
 		}
