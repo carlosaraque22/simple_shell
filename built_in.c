@@ -16,12 +16,12 @@ void exit_simple_shell(char **args, char *string, char **env)
 	exit(0);
 }
 /**
- * env_shell - Prints shell environment
+ * env_simple_shell - Prints shell environment
  * @args: Arguments split from cmdline
  * @line: User input buffer
  * @env: Environment
  */
-void env_shell(char **args, char *line, char **env)
+void env_simple_shell(char **args, char *string, char **env)
 {
 	int size, i = 0;
 
@@ -33,5 +33,5 @@ void env_shell(char **args, char *line, char **env)
 		i++;
 	}
 	(void)args;
-	(void)line;
+	(void)string;
 }
