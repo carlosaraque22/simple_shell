@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 /**
  * _getenv - gets env of input.
  * @env: this is the input.
