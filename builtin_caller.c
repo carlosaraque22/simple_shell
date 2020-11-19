@@ -10,7 +10,7 @@ int builtin_caller(char *check, char **args)
 {
 	int i = 0;
 
-	if (builtins_checker(args) == 1)
+	if (builtin_checker(args) == 1)
 		return (1);
 	while (check[i] != '\0')
 	{
