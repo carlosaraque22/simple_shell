@@ -47,14 +47,14 @@ char **split_line_v2(char *string)
 }
 
 /**
- * check_for_builtins - Checks for builtins.
+ * check_for_builtin - Checks for builtins.
  * @args: The arguments passed from prompt.
  * @line: The buffer with line of input from user.
  * @env: Environment of simple shell.
  * Return: 1 if builtins exist, or 0 if not.
  */
 
-int builtin_checker(char **args, char *string, char **env)
+int check_for_builtin(char **args, char *string, char **env)
 {
 	shell_t list[] = {
 		{"exit", exit_simple_shell},
@@ -107,4 +107,25 @@ int launch_prog(char **args)
 	}
 	(void)wpid;
 	return (1);
+}
+/**
+ * builtin_checker - Checks for builtins
+ * @args: Arguments passed from prompt
+ * Return: 1 if builtins exist, 0 if they don't
+ */
+int builtin_checker(char **args)
+{
+	int i;
+	builtins_t list[] = {
+		{"exit", exit_shell},
+		{"env", env_shell},
+		{NULL, NULL}
+	};
+
+	for (i = 0; list[i].arg != NULL; i++)
+	{
+		if (_strcmp(list[i].arg, args[0]) == 0)
+			return (1);
+	}
+	return (0);
 }
