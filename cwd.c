@@ -22,5 +22,24 @@ char cwd(char *file, char *er)
 		printf("Error! Unable to open directory.\n");
 		exit(0);
 	}
+	while ((sd = readdir(dir)))
+	{
+		for (i = 0; sd->d_name[i] && file[i]; i++)
+		{
+			if (sd->d_name[i] != file[i])
+				break;
+			if (i == (len - 1) && !(sd->d_name[i + 1]))
+			{
+				strcpy(ret, "./");
+				strcat(ret, file);
+				closedir(dir);
+				if (!(access(ret, X_OK)))
+					return (ret);
+				else
+					write(2, er, 5);
+			}
+		}
+	}
+	closedir(dir);
 	return (er);
 }
