@@ -63,9 +63,9 @@ int builtin_checker(char **args, char *string, char **env)
 	};
 	int i;
 
-	for (i = 0; list[i].arg != NULL; i++)
+	for (i = 0; list[i].ar != NULL; i++)
 	{
-		if (_strcmp(list[i].arg, args[0]) == 0)
+		if (_strcmp(list[i].ar, args[0]) == 0)
 		{
 			list[i].builtin(args, string, env);
 			return (1);
