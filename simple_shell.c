@@ -1,17 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stddef.h>
-#include <errno.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include "shell.h"
+#include "simple_shell.h"
 
 #define LINE_SIZE 1024
 #define TOKENS_BUFFER_SIZE 64
 /**
- * shell - Infinite loop that runs shell
+ * simple_shell - Infinite loop that runs shell
  * @ac: Arg count
  * @av: args passed to shell at beginning of prog
  * Return: Void
