@@ -17,7 +17,7 @@ int execute_program(char **args, char *string, char **env, int flow)
 		return (1);
 	if (flow == 1)
 	{
-	if (builtin_checker(args, string, env) == 1)
+	if (check_for_builtin(args, string, env) == 1)
 		return (1);
 	}
 	status = launch_prog(args);
