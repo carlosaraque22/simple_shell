@@ -14,7 +14,7 @@
  * Return: 1 if user entered a path/builtin, 2 if user entered a binary
  */
 
-int bridge(char *check, char **args, char *line)
+int builtin_caller(char *check, char **args, char *line)
 {
 	int i = 0;
 
