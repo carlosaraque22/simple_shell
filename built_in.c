@@ -10,7 +10,7 @@
 
 void exit_simple_shell(char **args, char *string, char **env)
 {
-	free(builds);
+	free(args);
 	free(string);
 	(void)env;
 	exit(0);
