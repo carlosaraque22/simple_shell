@@ -13,6 +13,7 @@
 #define TOKENS_BUFFER_SIZE 64
 #define LINE_SIZE 1024
 #define TOKEN_DELIMITERS " \t\r\n\a"
+extern char **environ;
 
 
 /**
