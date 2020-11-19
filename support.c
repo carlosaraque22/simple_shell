@@ -1,10 +1,12 @@
 #include "simple_shell.h"
+
 /**
  * strcmp_ - Compares two strings
  * @s1: First string
  * @s2: Second string
  * Return: Difference of first nonmatching character
  */
+
 int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
@@ -23,10 +25,12 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+
 /**
  * prompt - prints $
  * Return: void
  */
+
 void prompt(void)
 {
 	if (isatty(STDIN_FILENO))
@@ -34,12 +38,14 @@ void prompt(void)
 		write(1, "$ ", 2);
 	}
 }
+
 /**
  * _strstr - locates sub string
  * @haystack: input one
  * @needle: input two
  * Return: sub string
  */
+
 char *_strstr(char *haystack, char *needle)
 {
 	for (; *haystack != '\0'; haystack++)
@@ -65,6 +71,7 @@ char *_strstr(char *haystack, char *needle)
  * @s: this is the input char.
  * Return: length of the input string
  */
+
 int _strlen(char *c)
 {
 	int i = 1, sum = 0;
