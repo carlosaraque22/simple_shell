@@ -67,7 +67,7 @@ int builtin_checker(char **args, char *string, char **env)
 	{
 		if (_strcmp(list[i].ar, args[0]) == 0)
 		{
-			list[i].builtin(args, string, env);
+			list[i].built(args, string, env);
 			return (1);
 		}
 	}
