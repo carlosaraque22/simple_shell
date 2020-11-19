@@ -15,6 +15,6 @@ int main(int arc, char **arv, char **env)
 		(void)arv;
 	if (!env)
 		(void)env;
-	simple_shell(arc, arv, env);
+	shell(arc, arv, env);
 	return (0);
 }

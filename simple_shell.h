@@ -21,11 +21,11 @@
  * @built:
  *
  */
-typedef struct simpleshell
+typedef struct shell
 {
 	char *build;
 	void (*built)(char **builds, char *string, char **env);
-} simple_shell_t
+} shell_t
 void simple_shell(void);
 char *getline_v2(void);
 void exit_simple_shell(char **builds, char *string, char **env);
@@ -34,5 +34,4 @@ int _strcmp(char *s1, char *s2);
 void prompt(void);
 int launch_prog(char **args);
 int main(int arc, char **arv, char **env);
-	
 #endif
