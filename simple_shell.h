@@ -34,5 +34,6 @@ char **split_line_v2(char *string);
 int _strcmp(char *s1, char *s2);
 void prompt(void);
 int launch_prog(char **args);
-
+int main(int arc, char **arv, char **env)
+	
 #endif
