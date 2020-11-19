@@ -116,7 +116,7 @@ int launch_prog(char **args)
 int builtin_checker(char **args)
 {
 	int i;
-	builtins_t list[] = {
+	shell_t list[] = {
 		{"exit", exit_shell},
 		{"env", env_shell},
 		{NULL, NULL}
