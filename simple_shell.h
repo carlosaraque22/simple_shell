@@ -29,6 +29,7 @@ typedef struct shell
 void simple_shell(void);
 char *getline_v2(void);
 void exit_simple_shell(char **args, char *string, char **env);
+void env_simple_shell(char **args, char *string, char **env);
 char **split_line_v2(char *string);
 int _strcmp(char *s1, char *s2);
 void prompt(void);
