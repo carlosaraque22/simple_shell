@@ -39,6 +39,6 @@ int launch_prog(char **args);
 int builtin_checker(char **args, char *string, char **env);
 int execute_program(char **args, char *string, char **env, int flow);
 char *_strstr(char *haystack, char *needle);
-int _strlen(char *s);
+int _strlen(char *c);
 char *_getenv(char *env);
 #endif
