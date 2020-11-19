@@ -45,11 +45,41 @@ char **split_line_v2(char *string)
 	tokens[pos] = NULL;
 	return (tokens);
 }
+
 /**
- * launch_prog - Forks and launches unix cmd
- * @args: Args for cmd
- * Return: 1 on success
+ * check_for_builtins - Checks for builtins.
+ * @args: The arguments passed from prompt.
+ * @line: The buffer with line of input from user.
+ * @env: Environment of simple shell.
+ * Return: 1 if builtins exist, or 0 if not.
  */
+
+int check_for_builtins(char **args, char *string, char **env)
+{
+	shell_t list[] = {
+		{"exit", exit_shell},
+		{"env", env_shell},
+		{NULL, NULL}
+	};
+	int i;
+
+	for (i = 0; list[i].arg != NULL; i++)
+	{
+		if (_strcmp(list[i].arg, args[0]) == 0)
+		{
+			list[i].builtin(args, string, env);
+			return (1);
+		}
+	}
+	return (0);
+}
+
+/**
+ * launch_prog - Forks and launches unix cmd.
+ * @args: The arguments for cmd.
+ * Return: Always 1 (success).
+ */
+
 int launch_prog(char **args)
 {
 	pid_t pid, wpid;
