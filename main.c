@@ -16,4 +16,5 @@ int main(int ac, char **av, char **env)
 	if (!env)
 		(void)env;
 	shell(ac, av, env);
+	return (0);
 }
