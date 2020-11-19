@@ -16,7 +16,7 @@ void simple_shell(int ac, char **av, char **env)
 	int status = 1;
 	char *tmp = NULL;
 	char *er;
-	char *filename;
+	char *file;
 	int flow;
 	er = "error";
 	do {
@@ -26,11 +26,11 @@ void simple_shell(int ac, char **av, char **env)
 		flow = builtin_caller(args[0], args);
 		if (flow == 2)
 		{
-			filename = args[0];
+			file = args[0];
 			args[0] = find_path(args[0], tmp, er);
 			if (args[0] == er)
 			{
-				args[0] = search_cwd(filename);
+				args[0] = cwd(file);
 			}
 		}
 		if (args[0] != er)
