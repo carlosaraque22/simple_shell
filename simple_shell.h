@@ -42,4 +42,5 @@ char *_strstr(char *haystack, char *needle);
 int _strlen(char *c);
 char *_getenv(char *env);
 int builtin_caller(char *check, char **args);
+char cwd(char *file, char *er);
 #endif
