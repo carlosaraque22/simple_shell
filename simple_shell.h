@@ -36,11 +36,12 @@ char **split_line_v2(char *string);
 int _strcmp(char *s1, char *s2);
 void prompt(void);
 int launch_prog(char **args);
-int builtin_checker(char **args, char *string, char **env);
+int check_for_builtin(char **args, char *string, char **env);
 int execute_program(char **args, char *string, char **env, int flow);
 char *_strstr(char *haystack, char *needle);
 int _strlen(char *c);
+int builtin_checker(char **args);
 char *_getenv(char *env);
 int builtin_caller(char *check, char **args);
-char *cwd(char *file, char *er);
+char cwd(char *file, char *er);
 #endif
