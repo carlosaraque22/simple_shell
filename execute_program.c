@@ -21,7 +21,7 @@ int execute_program(char **args, char *string)
 
 	if (args[0] == NULL)
 		return (1);
-	if (check_for_builtins(args, string) == 1)
+	if (builtin_checker(args, string) == 1)
 		return (1);
 	status = launch_prog(args);
 	return (status);

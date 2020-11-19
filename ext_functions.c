@@ -54,7 +54,7 @@ char **split_line_v2(char *string)
  * Return: 1 if builtins exist, or 0 if not.
  */
 
-int check_for_builtins(char **args, char *string, char **env)
+int builtin_checker(char **args, char *string, char **env)
 {
 	shell_t list[] = {
 		{"exit", exit_shell},
