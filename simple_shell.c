@@ -21,7 +21,7 @@ void simple_shell(int ac, char **av, char **env)
 	er = "error";
 	do {
 		write(1, "$ ", 2);
-		string = _getline_v2();
+		string = getline_v2();
 		args = split_line_v2(string);
 		flow = bridge(args[0], args);
 		if (flow == 2)
