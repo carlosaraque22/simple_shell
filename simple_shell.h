@@ -21,12 +21,11 @@
  * @built:
  *
  */
-
 typedef struct shell
 {
-	char *arg;
-	void (*builtin)(char **args, char *line, char **env);
-} shell_t;
+	char *build;
+	void (*built)(char **builds, char *string, char **env);
+} shell_t
 void simple_shell(void);
 char *getline_v2(void);
 void exit_simple_shell(char **builds, char *string, char **env);
