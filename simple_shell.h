@@ -15,11 +15,11 @@
  *
  */
 
-typedef struct shell
+typedef struct builtins
 {
-	char *build;
-	void (*built)(char **builds, char *string, char **env);
-} shell_t
+	char *arg;
+	void (*builtin)(char **args, char *line, char **env);
+} builtins_t;
 void simple_shell(void)
 char *getline_v2(void)
 void exit_simple_shell(char **builds, char *string, char **env)
