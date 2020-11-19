@@ -15,10 +15,10 @@ void simple_shell(int ac, char **av, char **env)
 	char **args;
 	int status = 1;
 	char *tmp = NULL;
-	char *er;
-	char *file;
+	char *mistake;
+	char *filename;
 	int flow;
-	er = "error";
+        mistake = "error";
 	do {
 		write(1, "$ ", 2);
 		string = getline_v2();
@@ -27,13 +27,13 @@ void simple_shell(int ac, char **av, char **env)
 		if (flow == 2)
 		{
 			file = args[0];
-			args[0] = find_path(args[0], tmp, er);
-			if (args[0] == er)
+			args[0] = find_path(args[0], tmp, mistake);
+			if (args[0] == mistake)
 			{
-				args[0] = cwd(file);
+				args[0] = cwd(filename);
 			}
 		}
-		if (args[0] != er)
+		if (args[0] != mistake)
 			status = execute_program(args, string, env, flow);
 		free(string);
 		free(args);
