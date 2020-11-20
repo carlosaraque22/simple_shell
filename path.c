@@ -45,3 +45,32 @@ path = NULL;
 free(tmp);
 return (mistake);
 }
+/**
+ *read_dir - opens and reads directory file names in search of fil
+ *@mistake: this is the error mensage for the path.
+ *@s: struct containing info about a files in a directory.
+ *@fil: name of file being searched for.
+ *@fp: directory being searched through.
+ *@t: string containing the PATH variable's value.
+ *@l: length of filename.
+ *Return: success - path of fil/fil, or mistake if fails.
+ */
+char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char *t)
+{
+	int i = 0;
+	char *ret;
+
+	for (i = 0; s->d_name[i] && fil[i]; i++)
+	{
+		if (s->d_name[i] != fil[i])
+			break;
+		if (i == (l - 1) && !(s->d_name[i + 1]))
+		{
+			ret = strcat(fp, "/");
+			ret = strcat(ret, fil);
+			free(t);
+			return (ret);
+		}
+	}
+	return (mistake);
+}
