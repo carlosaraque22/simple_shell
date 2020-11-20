@@ -27,23 +27,22 @@ char *look_path(char *filename, char *tmp, char *mistake)
 			printf("Error! Unable to open directory.\n");
 			exit(0);
 		}
-	}
-	while ((sd = readdir(dir)))
-	{
-		ret = read_dir(mistake, sd, filename, len, found_path, tmp);
-		if (ret != mistake)
+		while ((sd = readdir(dir)))
 		{
-			closedir(dir);
-			if (!(access(ret, X_OK)))
-				return (ret);
+			ret = read_dir(mistake, sd, filename, len, found_path, tmp);
+			if (ret != mistake)
+			{
+				closedir(dir);
+				if (!(access(ret, X_OK)))
+					return (ret);
+			}
 		}
+		closedir(dir);
+		found_path = strtok(NULL, ":");
 	}
-	closedir(dir);
-	found_path = strtok(NULL, ":");
-}
-path = NULL;
-free(tmp);
-return (mistake);
+	path = NULL;
+	free(tmp);
+	return (mistake);
 }
 /**
  *read_dir - opens and reads directory file names in search of fil

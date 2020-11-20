@@ -12,6 +12,7 @@ void simple_shell(int ac, char **av, char **env)
 	char *string;
 	char **args;
 	int status = 1;
+	char *tmp = NULL;
 	char *mistake;
 	char *file;
 	int flow;
