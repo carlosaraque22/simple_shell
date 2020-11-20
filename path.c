@@ -18,8 +18,8 @@ char *look_path(char *filename, char *tmp, char *mistake)
 		len++;
 	path = _getenv("PATH");
 	tmp = save_path(tmp, path);
-	file_path = strtok(tmp, ":");
-	while (file_path)
+	found_path = strtok(tmp, ":");
+	while (found_path)
 	{
 		dir = opendir(found_path);
 		if (!dir)
@@ -28,4 +28,20 @@ char *look_path(char *filename, char *tmp, char *mistake)
 			exit(0);
 		}
 	}
+	while ((sd = readdir(dir)))
+	{
+		ret = read_dir(er, sd, filename, len, file_path, tmp);
+		if (ret != mistake)
+		{
+			closedir(dir);
+			if (!(access(ret, X_OK)))
+				return (ret);
+		}
+	}
+	closedir(dir);
+	found_path = strtok(NULL, ":");
+}
+path = NULL;
+free(tmp);
+return (mistake);
 }
