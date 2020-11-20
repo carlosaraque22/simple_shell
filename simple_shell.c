@@ -24,6 +24,7 @@ void simple_shell(int ac, char **av, char **env)
 
 		if (string == NULL)
 		{
+			free(string);
 			continue;
 		}
 		args = split_line_v2(string);
