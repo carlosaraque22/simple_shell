@@ -74,3 +74,40 @@ char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char
 	}
 	return (mistake);
 }
+
+/**
+ *save_path - saves a copy of the PATH string
+ *@tmp: copy to be made of PATH
+ *@path: string containing original PATH value
+ *
+ *Return: tmp if success first time, path every other time, or mistake if fails.
+ */
+char *save_path(char *tmp, char *path)
+{
+	int i = 0;
+
+	if (!tmp)
+	{
+		tmp = malloc(sizeof(char) * 100);
+		while (path[i])
+		{
+			tmp[i] = path[i];
+			i++;
+			tmp[i] = '\0';
+		}
+		i = 0;
+		return (tmp);
+	}
+	else
+	{
+		while (tmp[i])
+		{
+			path[i] = tmp[i];
+			i++;
+			path[i] = '\0';
+		}
+		i = 0;
+		return (path);
+	}
+	return ("error");
+}

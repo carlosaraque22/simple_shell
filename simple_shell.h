@@ -44,4 +44,7 @@ int builtin_checker(char **args);
 char *_getenv(char *env);
 int builtin_caller(char *check, char **args);
 char *cwd(char *file, char *er);
+char *save_path(char *tmp, char *path);
+char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char *t);
+char *look_path(char *filename, char *tmp, char *mistake)
 #endif
