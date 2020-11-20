@@ -30,7 +30,7 @@ char *look_path(char *filename, char *tmp, char *mistake)
 	}
 	while ((sd = readdir(dir)))
 	{
-		ret = read_dir(mistake, sd, filename, len, file_path, tmp);
+		ret = read_dir(mistake, sd, filename, len, found_path, tmp);
 		if (ret != mistake)
 		{
 			closedir(dir);
