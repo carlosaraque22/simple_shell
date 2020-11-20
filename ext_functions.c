@@ -22,7 +22,6 @@ char *getline_v2(void)
 		return (NULL);
 	}
 	string[tmp - 1] = 0;
-	
 	return (string);
 }
 
