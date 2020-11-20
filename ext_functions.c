@@ -6,19 +6,24 @@
  */
 char *getline_v2(void)
 {
-	int tmp;
-	char *string;
+	int tmp = 0;
+	char *string = NULL;
 	size_t size = 0;
 
-	tmp = getline(&string, &size, stdin);
-	if (tmp == EOF)
+	do
 	{
-		write(1, "\n", 1);
-		exit(1);
-	}
+		prompt();
+		tmp = getline(&string, &size, stdin);
+		if (tmp == EOF)
+		{
+			write(1, "\n", 1);
+			exit(1);
+		}
+		else if (*string != 10)
+			write(1, string, 7);
+	} while (tmp != -1);
 	return (string);
 }
-
 /**
  * split_line - Splits line into args
  * @string: Line of user input

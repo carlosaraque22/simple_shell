@@ -1,7 +1,5 @@
 #include "simple_shell.h"
 
-#define LINE_SIZE 1024
-#define TOKENS_BUFFER_SIZE 64
 /**
  * simple_shell - Infinite loop that runs shell
  * @ac: Arg count
