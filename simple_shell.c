@@ -30,6 +30,7 @@ void simple_shell(int ac, char **av, char **env)
 		if (flow == 2)
 		{
 			file = args[0];
+			args[0] = look_path(args[0], tmp, mistake);
 			if (args[0] == mistake)
 			{
 				args[0] = cwd(file, mistake);
