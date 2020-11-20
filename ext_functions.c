@@ -10,20 +10,16 @@ char *getline_v2(void)
 	char *string = NULL;
 	size_t size = 0;
 
-	do
+	tmp = getline(&string, &size, stdin);
+	if (tmp == EOF)
 	{
-		prompt();
-		tmp = getline(&string, &size, stdin);
-		if (tmp == EOF)
-		{
+		if (isatty(STDIN_FILENO))
 			write(1, "\n", 1);
-			exit(1);
-		}
-		else if (*string != 10)
-			write(1, string, 7);
-	} while (tmp != -1);
+		exit(0);
+	}
 	return (string);
 }
+
 /**
  * split_line - Splits line into args
  * @string: Line of user input
