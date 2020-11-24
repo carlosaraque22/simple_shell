@@ -16,11 +16,11 @@ extern char **environ;
 
 
 /**
- * struct shell -
- * @build:
- * @built:
- *
+ * struct builtins - Has builtins and associated funcs
+ * @arg: Builtins name
+ * @builtin: Mathcing builtin func
  */
+
 typedef struct shell
 {
 	char *ar;
