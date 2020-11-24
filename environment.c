@@ -2,6 +2,9 @@
 /**
  * _getenv - gets env of input.
  * @env: this is the input.
+ * environ: points to the unistd.h environment
+ * temp: saves environ to variable result.
+ * res: compares the environment imput till slash.
  * Return: the env.
  */
 
