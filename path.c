@@ -2,7 +2,7 @@
 /**
  * look_path - this function look the path.
  * @filename: file name
- * @tmp: saves the PATH string
+ * @tmp: saves the PATH string.
  * @mistake: the error message.
  * Return: Success - path/filename, if fail return mistake
  */
