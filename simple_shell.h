@@ -9,6 +9,7 @@
 #include <stddef.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <errno.h>
 #define TOKENS_BUFFER_SIZE 64
 #define LINE_SIZE 1024
 #define TOKEN_DELIMITERS " \t\r\n\a"
