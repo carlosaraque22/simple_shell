@@ -41,5 +41,5 @@ char *cwd(char *file, char *mistake)
 		}
 	}
 	closedir(dir);
-	return (er);
+	return (mistake);
 }
