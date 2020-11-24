@@ -15,7 +15,7 @@ char *cwd(char *file, char *mistake)
 
 	while (file[len])
 		len++;
-	ret = malloc(sizeof(char) * (len + 3));
+	ret = malloc(sizeof(char) * (len + 1));
 	dir = opendir(".");
 	if (!dir)
 	{
