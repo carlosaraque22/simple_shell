@@ -4,7 +4,7 @@
  * @env: this is the input.
  * environ: points to the unistd.h environment
  * temp: saves environ to variable result.
- * res: compares the environment imput till slash.
+ * res: compares the environment input until first occurence (slash).
  * Return: the env.
  */
 
