@@ -7,7 +7,6 @@
 #include <string.h>
 #include <dirent.h>
 #include <stddef.h>
-#include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #define TOKENS_BUFFER_SIZE 64
@@ -43,7 +42,7 @@ int _strlen(char *c);
 int builtin_checker(char **args);
 char *_getenv(char *env);
 int builtin_caller(char *check, char **args);
-char *cwd(char *file, char *er);
+char *cwd(char *file, char *mistake);
 char *save_path(char *tmp, char *path);
 char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char *t);
 char *look_path(char *filename, char *tmp, char *mistake);
