@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 
 /**
- * _getline - Gets line of user input
+ * getline_v2 - Gets line of user input
  * Return: Pointer to buffer of user input
  */
 char *getline_v2(void)
@@ -13,7 +13,7 @@ char *getline_v2(void)
 	tmp = getline(&string, &size, stdin);
 	if (tmp == EOF)
 	{
-		free (string);
+		free(string);
 		exit(0);
 	}
 	if (tmp == 1)
@@ -26,7 +26,7 @@ char *getline_v2(void)
 }
 
 /**
- * split_line - Splits line into args
+ * split_line_v2 - Splits line into args
  * @string: Line of user input
  * Return: Array of args of user input
  */
@@ -36,6 +36,7 @@ char **split_line_v2(char *string)
 	char **tokens = malloc(sizeof(char *) * buffer_size);
 	char *token;
 	int pos = 0;
+
 	if (!tokens)
 	{
 		perror("Could not allocate space for tokens\n");
@@ -55,7 +56,7 @@ char **split_line_v2(char *string)
 /**
  * check_for_builtin - Checks for builtins.
  * @args: The arguments passed from prompt.
- * @line: The buffer with line of input from user.
+ * @string: The buffer with line of input from user.
  * @env: Environment of simple shell.
  * Return: 1 if builtins exist, or 0 if not.
  */
