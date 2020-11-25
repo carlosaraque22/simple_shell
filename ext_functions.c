@@ -6,7 +6,7 @@
  */
 char *getline_v2(void)
 {
-	int tmp = 0;
+	int tmp;
 	char *string = NULL;
 	size_t size = 0;
 
