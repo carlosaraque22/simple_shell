@@ -43,12 +43,10 @@ char *cwd(char *file, char *mistake)
 				strcat(ret, file);
 				/* concat the ./ and the file */
 				closedir(dir);
-				{
+
 				if (!(access(ret, X_OK)))
 					/* check for permissions */
 					return (ret);
-				}
-				else
 					write(2, mistake, 5);
 			}
 		}
