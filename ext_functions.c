@@ -13,15 +13,10 @@ char *getline_v2(void)
 	tmp = getline(&string, &size, stdin);
 	if (tmp == EOF)
 	{
-		free(string);
+		if (isatty(STDIN_FILENO))
+		write(1, "\n", 1);
 		exit(0);
 	}
-	if (tmp == 1)
-	{
-		free(string);
-		return (NULL);
-	}
-	string[tmp - 1] = 0;
 	return (string);
 }
 
@@ -36,10 +31,11 @@ char **split_line_v2(char *string)
 	char **tokens = malloc(sizeof(char *) * buffer_size);
 	char *token;
 	int pos = 0;
+
 	if (!tokens)
 	{
 		perror("Could not allocate space for tokens\n");
-		exit(2);
+		exit(0);
 	}
 	token = strtok(string, TOKEN_DELIMITERS);
 	while (token)
@@ -98,13 +94,13 @@ int launch_prog(char **args)
 		if (execve(args[0], args, NULL) == -1)
 		{
 			perror("Failed to execute command\n");
-			exit(3);
+			exit(0);
 		}
 	}
 	else if (pid < 0)
 	{
 		perror("Error forking\n");
-		exit(4);
+		exit(0);
 	}
 	else
 	{
