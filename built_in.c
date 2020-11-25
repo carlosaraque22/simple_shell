@@ -3,7 +3,7 @@
 /**
  * exit_simple_shell - This will run the builtin exit
  * @string: Line buffer of user input
- * @builds: Arguments from user
+ * @args: Arguments from user
  * @env: Environment
  * Return: Void
  */
@@ -18,7 +18,7 @@ void exit_simple_shell(char **args, char *string, char **env)
 /**
  * env_simple_shell - Prints shell environment
  * @args: Arguments split from cmdline
- * @line: User input buffer
+ * @string: User input buffer
  * @env: Environment
  */
 void env_simple_shell(char **args, char *string, char **env)
@@ -50,6 +50,7 @@ void ctrl_c(int i)
 /**
  * help_function - command that add help function.
  * @args: the arguments passed from the imput.
+ * @string: Line user buffer imput.
  * @env: environment variables.
  * Return: is not neccessary.
  */

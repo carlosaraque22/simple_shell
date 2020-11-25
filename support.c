@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 
 /**
- * strcmp_ - Compares two strings
+ * _strcmp - Compares two strings
  * @s1: First string
  * @s2: Second string
  * Return: Difference of first nonmatching character
@@ -68,7 +68,7 @@ char *_strstr(char *haystack, char *needle)
 
 /**
  * _strlen - a function that returns the length of a string.
- * @s: this is the input char.
+ * @c: this is the input char.
  * Return: length of the input string
  */
 
