@@ -98,29 +98,29 @@ Run the executable in your terminal after compiling:
 ```
 $ ./hsh
 $ ls -al
-total 100
-drwxrwxr-x  3 vagrant vagrant  4096 Jul 19 22:49 .
-drwxr-xr-x 14 vagrant vagrant  4096 Jul 17 22:37 ..
--rw-rw-r--  1 vagrant vagrant   144 Jul 19 17:16 AUTHORS
--rw-rw-r--  1 vagrant vagrant  2367 Jul 19 22:33 builtins2.c
--rw-rw-r--  1 vagrant vagrant  2764 Jul 19 22:14 builtins.c
--rw-rw-r--  1 vagrant vagrant   710 Jul 16 01:03 environment.c
--rw-rw-r--  1 vagrant vagrant  1217 Jul 16 03:24 errors.c
-drwxrwxr-x  8 vagrant vagrant  4096 Jul 19 22:34 .git
--rwxrwxr-x  1 vagrant vagrant 32287 Jul 19 22:34 hsh
--rw-rw-r--  1 vagrant vagrant  1792 Jul 19 22:12 man_1_simple_shell
--rw-rw-r--  1 vagrant vagrant   484 Jul 15 20:09 memory_allocation.c
--rw-rw-r--  1 vagrant vagrant  1273 Jul 18 21:00 new_strtok.c
--rw-rw-r--  1 vagrant vagrant  3427 Jul 19 22:06 path.c
--rw-rw-r--  1 vagrant vagrant  2347 Jul 19 22:49 README.md
--rw-rw-r--  1 vagrant vagrant  1769 Jul 19 22:04 shell.h
--rw-rw-r--  1 vagrant vagrant  1480 Jul 18 21:15 simple_shell.c
--rw-rw-r--  1 vagrant vagrant  2111 Jul 16 01:10 strfunc.c
--rw-rw-r--  1 vagrant vagrant   719 Jul 19 21:46 tokenize.c
+total 88
+drwxrwxr-x 3 vagrant vagrant  4096 Nov 25 23:31 .
+drwxr-xr-x 9 vagrant vagrant  4096 Nov 25 23:31 ..
+drwxrwxr-x 8 vagrant vagrant  4096 Nov 25 23:31 .git
+-rw-rw-r-- 1 vagrant vagrant   125 Nov 25 23:31 AUTHORS
+-rw-rw-r-- 1 vagrant vagrant  3818 Nov 25 23:31 README.md
+-rw-rw-r-- 1 vagrant vagrant  1297 Nov 25 23:31 built_in.c
+-rw-rw-r-- 1 vagrant vagrant   482 Nov 25 23:31 builtin_caller.c
+-rw-rw-r-- 1 vagrant vagrant  1152 Nov 25 23:31 cwd.c
+-rw-rw-r-- 1 vagrant vagrant   557 Nov 25 23:31 environment.c
+-rw-rw-r-- 1 vagrant vagrant   473 Nov 25 23:31 execute_program.c
+-rw-rw-r-- 1 vagrant vagrant  2463 Nov 25 23:31 ext_functions.c
+-rwxrwxr-x 1 vagrant vagrant 18805 Nov 25 23:31 hsh
+-rw-rw-r-- 1 vagrant vagrant   379 Nov 25 23:31 main.c
+-rw-rw-r-- 1 vagrant vagrant  1610 Nov 25 23:31 man_1_simple_shell
+-rw-rw-r-- 1 vagrant vagrant  2241 Nov 25 23:31 path.c
+-rw-rw-r-- 1 vagrant vagrant   921 Nov 25 23:31 simple_shell.c
+-rw-rw-r-- 1 vagrant vagrant  1497 Nov 25 23:31 simple_shell.h
+-rw-rw-r-- 1 vagrant vagrant  1136 Nov 25 23:31 support.c
 ```
 ## Bugs
 At that time we do not know bugs.
 
 ## Authors
-Carlos Araque  |[GitHub](https://github.com/carlosaraque22)
-Esteban Aguiar |[GitHub](https://github.com/AmericoVespucio)
+Carlos Araque  | [GitHub](https://github.com/carlosaraque22)
+Esteban Aguiar | [GitHub](https://github.com/AmericoVespucio)
