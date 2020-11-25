@@ -31,7 +31,7 @@ char *cwd(char *file, char *mistake)
 			{
 				break;
 			}
-			if (i == (len - 1) && (sd->d_name[i + 1]))
+			if (i == (len - 1) && !(sd->d_name[i + 1]))
 			{
 				strcpy(ret, "./");
 				strcat(ret, file);
