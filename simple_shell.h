@@ -45,7 +45,8 @@ char *_getenv(char *env);
 int builtin_caller(char *check, char **args);
 char *cwd(char *file, char *mistake);
 char *save_path(char *tmp, char *path);
-char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char *t);
+char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp,
+	       char *t);
 char *look_path(char *filename, char *tmp, char *mistake);
 void ctrl_c(int i);
 void help_function(char **args, char *string, char **env);

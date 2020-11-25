@@ -54,7 +54,8 @@ char *look_path(char *filename, char *tmp, char *mistake)
  *@l: length of filename.
  *Return: success - path of fil/fil, or mistake if fails.
  */
-char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char *t)
+char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp,
+	       char *t)
 {
 	int i = 0;
 	char *ret;
@@ -79,7 +80,8 @@ char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char
  *@tmp: copy to be made of PATH
  *@path: string containing original PATH value
  *
- *Return: tmp if success first time, path every other time, or mistake if fails.
+ *Return: tmp if success first time, path every other time,
+ *or mistake if fails.
  */
 char *save_path(char *tmp, char *path)
 {
