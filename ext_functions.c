@@ -65,6 +65,7 @@ int check_for_builtin(char **args, char *string, char **env)
 	shell_t list[] = {
 		{"exit", exit_simple_shell},
 		{"env", env_simple_shell},
+		{"help", help_function},
 		{NULL, NULL}
 	};
 	int i;
@@ -125,6 +126,7 @@ int builtin_checker(char **args)
 	shell_t list[] = {
 		{"exit", exit_simple_shell},
 		{"env", env_simple_shell},
+		{"help", help_function},
 		{NULL, NULL}
 	};
 
