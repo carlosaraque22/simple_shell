@@ -1,9 +1,9 @@
 #include "simple_shell.h"
 
 /**
- * execute_program - Executes binary or builtin
+ * execute_prog - Executes binary or builtin
  * @args: Argument buffer
- * @string: Line buffer
+ * @line: Line buffer
  * @env: Environment
  * @flow: Helps decide what code to run
  * Return: 1 if success

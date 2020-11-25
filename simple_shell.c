@@ -1,11 +1,10 @@
 #include "simple_shell.h"
 
 /**
- * simple_shell - Infinite loop that runs shell.
- * @ac: Arg count.
- * @av: args passed to shell at beginning of prog.
- * @env: Envioronmet.
- * Return: Is not neccessary.
+ * simple_shell - Infinite loop that runs shell
+ * @ac: Arg count
+ * @av: args passed to shell at beginning of prog
+ * Return: Void
  */
 
 void simple_shell(int ac, char **av, char **env)
@@ -17,12 +16,18 @@ void simple_shell(int ac, char **av, char **env)
 	char *mistake;
 	char *file;
 	int flow;
+        mistake = "error";
 
-	mistake = "error";
-	
+	signal(SIGINT, ctrl_c);
 	do {
 		prompt();
 		string = getline_v2();
+
+		if (string == NULL)
+		{
+			free(string);
+			continue;
+		}
 		args = split_line_v2(string);
 		flow = builtin_caller(args[0], args);
 		if (flow == 2)
