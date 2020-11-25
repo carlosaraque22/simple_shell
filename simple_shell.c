@@ -22,10 +22,13 @@ void simple_shell(int ac, char **av, char **env)
 	do {
 		prompt();
 		string = getline_v2();
+		if (string == NULL)
+		{
+			free(string);
+			continue;
+		}
 		args = split_line_v2(string);
 		flow = builtin_caller(args[0], args);
-		if (string == NULL)
-			continue;
 		if (flow == 2)
 		{
 			file = args[0];
