@@ -35,36 +35,3 @@ void env_simple_shell(char **args, char *string, char **env)
 	(void)args;
 	(void)string;
 }
-/**
- * ctrl_c- function for use ctrl c in c.
- * @i: the line string.
- * Return: the return is void
- */
-void ctrl_c(int i)
-{
-	(void)i;
-	signal(SIGINT, ctrl_c);
-	write(1, "\n", 1);
-	prompt();
-}
-/**
- * help_function - command that add help function.
- * @args: the arguments passed from the imput.
- * @string: Line user buffer imput.
- * @env: environment variables.
- * Return: is not neccessary.
- */
-void help_function(char **args, char *string, char **env)
-{
-	(void)env;
-	if (args[1] != NULL)
-	{
-		if (execve("/bin/cat", args, NULL) == -1)
-		{
-			perror("");
-		}
-		printf("a!\n");
-	}
-	(void)string;
-	printf("HELP!\n");
-}

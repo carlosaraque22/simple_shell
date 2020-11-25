@@ -19,7 +19,7 @@ void simple_shell(int ac, char **av, char **env)
 	int flow;
 
 	mistake = "error";
-	signal(SIGINT, ctrl_c);
+	
 	do {
 		prompt();
 		string = getline_v2();
