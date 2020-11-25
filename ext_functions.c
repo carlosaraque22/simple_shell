@@ -11,17 +11,16 @@ char *getline_v2(void)
 	size_t size = 0;
 
 	tmp = getline(&string, &size, stdin);
-	if (tmp == EOF)
+	if (tmp == -1)
 	{
-		free(string);
-		exit(0);
+		if (tmp == EOF)
+		{
+			free(string);
+			exit(0);
+		}
+		perror("");
 	}
-	if (tmp == 1)
-	{
-		free(string);
-		return (NULL);
-	}
-	string[tmp - 1] = 0;
+	string[tmp - 1] = '\0';
 	return (string);
 }
 
