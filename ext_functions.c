@@ -126,8 +126,6 @@ int builtin_checker(char **args)
 	shell_t list[] = {
 		{"exit", exit_simple_shell},
 		{"env", env_simple_shell},
-		{"help", help_function},
-		{"cd", cd_function},
 		{NULL, NULL}
 	};
 
