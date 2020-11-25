@@ -2,7 +2,7 @@
 /**
  * cwd - search the current working directory.
  * @file: this is the file name.
- * @mistake:
+ * @mistake: the error.
  * Return: the current working dir.
  */
 
