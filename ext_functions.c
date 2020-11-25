@@ -11,15 +11,24 @@ char *getline_v2(void)
 	size_t size = 0;
 
 	tmp = getline(&string, &size, stdin);
+	if (tmp == EOF)
+	{
+		free (string);
+		exit(0);
+	}
 	if (tmp < 0)
 	{
-		if (isatty(0) == 1)
+		if (isatty(STDIO_FILENO))
 			write(1, "\n", 1);
-		free(string);
 		exit(EXIT_FAILURE);
 	}
-	else
-		return (1);
+	if (tmp == 1)
+	{
+		free(string);
+		return (NULL);
+	}
+	string[tmp - 1] = 0;
+	return (string);
 }
 
 /**
