@@ -18,6 +18,23 @@ In this project we are tasked with creating our own simple UNIX command interpre
 
 ---
 
+## Files
+
+File|Description
+---|---
+[main.c](./main.c)|entry point for shell
+[simple_shell.c](./simple_shell.c)|executes the shell
+[simple_shell.h](./simple_shell.h)|header
+[built_in.c](./built_in.c)|built-in functions
+[ext_functions.c](./ext_functions.c)|helper functions
+[support.c](./support.c)|more helper functions
+[environment.c](./environment.c)|gets inputted env
+[cwd.c](./cwd.c)|gets current working dir
+[path.c](./path.c)|finds PATH
+[builtin_caller.c](./builtin_caller.c)|checks if builtin or not
+[execute_program.c](./execute_program.c)|executes builtin or binary
+[man_1_simple_shell](./man_1_simple_shell)|man page
+
 ### TASKS
 
 - [x] uses the PATH
@@ -101,23 +118,6 @@ drwxrwxr-x  8 vagrant vagrant  4096 Jul 19 22:34 .git
 -rw-rw-r--  1 vagrant vagrant  2111 Jul 16 01:10 strfunc.c
 -rw-rw-r--  1 vagrant vagrant   719 Jul 19 21:46 tokenize.c
 ```
-## Files
-
-File|Description
----|---
-[main.c](./main.c)|entry point for shell
-[simple_shell.c](./simple_shell.c)|executes the shell
-[simple_shell.h](./simple_shell.h)|header
-[built_in.c](./built_in.c)|built-in functions
-[ext_functions.c](./ext_functions.c)|helper functions
-[support.c](./support.c)|more helper functions
-[environment.c](./environment.c)|gets inputted env
-[cwd.c](./cwd.c)|gets current working dir
-[path.c](./path.c)|finds PATH
-[builtin_caller.c](./builtin_caller.c)|checks if builtin or not
-[execute_program.c](./execute_program.c)|executes builtin or binary
-[man_1_simple_shell](./man_1_simple_shell)|man page
-
 ## Bugs
 At that time we do not know bugs.
 
