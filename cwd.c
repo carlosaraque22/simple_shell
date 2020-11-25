@@ -28,9 +28,8 @@ char *cwd(char *file, char *mistake)
 		for (i = 0; sd->d_name[i] && file[i]; i++)
 		{
 			if (sd->d_name[i] != file[i])
-			{
 				break;
-			}
+
 			if (i == (len - 1) && !(sd->d_name[i + 1]))
 			{
 				strcpy(ret, "./");
@@ -38,9 +37,9 @@ char *cwd(char *file, char *mistake)
 				closedir(dir);
 				if (!(access(ret, X_OK)))
 					return (ret);
+				else
+					write(2, mistake, 5);
 			}
-			else
-				write(2, mistake, 5);
 		}
 	}
 	closedir(dir);
