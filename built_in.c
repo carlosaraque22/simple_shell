@@ -10,10 +10,10 @@
 
 void exit_simple_shell(char **args, char *string, char **env)
 {
-	free(args);
-	free(string);
-	(void)env;
-	exit(0);
+ 		free(args);
+		free(string);
+		(void)env;
+		exit(-1);
 }
 /**
  * env_simple_shell - Prints shell environment
