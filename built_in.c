@@ -13,7 +13,7 @@ void exit_simple_shell(char **args, char *string, char **env)
  		free(args);
 		free(string);
 		(void)env;
-		exit(0);
+		exit(EXIT_FAILURE);
 }
 /**
  * env_simple_shell - Prints shell environment
