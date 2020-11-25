@@ -13,8 +13,7 @@ char *getline_v2(void)
 	tmp = getline(&string, &size, stdin);
 	if (tmp == EOF)
 	{
-		if (isatty(STDIN_FILENO))
-			write(1, "\n", 1);
+		free(string);
 		exit(0);
 	}
 	if (tmp == 1)
