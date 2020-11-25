@@ -10,10 +10,10 @@
 
 void exit_simple_shell(char **args, char *string, char **env)
 {
- 		free(args);
-		free(string);
-		(void)env;
-		exit(0);
+	free(args);
+	free(string);
+	(void)env;
+	exit(0);
 }
 /**
  * env_simple_shell - Prints shell environment
@@ -61,10 +61,10 @@ void help_function(char **args, char *string, char **env)
 	if (args[1] != NULL)
 	{
 		if (execve("/bin/cat", args, NULL) == -1)
-	   {
-		   perror("");
-	   }
-	   printf("a!\n");
+		{
+			perror("");
+		}
+		printf("a!\n");
 	}
 	(void)string;
 	printf("HELP!\n");
