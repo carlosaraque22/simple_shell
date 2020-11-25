@@ -93,27 +93,27 @@ int launch_prog(char **args)
 	int status;
 
 	pid = fork();
+	if (pid == -1)
+	{
+		perror("");
+		exit(99);
+	}
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		if (execve(args[0], args, envieron) == -1)
 		{
 			perror("Failed to execute command\n");
-			exit(3);
+			free(args);
+			exit(99);
 		}
-	}
-	else if (pid < 0)
-	{
-		perror("Error forking\n");
-		exit(4);
 	}
 	else
 	{
-		do {
-			wpid = waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && WIFSIGNALED(status));
+		wait(&status);
+		if (status == 25088)
+			break;
 	}
-	(void)wpid;
-	return (1);
+	return (errno);
 }
 /**
  * builtin_checker - Checks for builtins
