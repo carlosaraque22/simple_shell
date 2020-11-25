@@ -13,7 +13,8 @@ char *getline_v2(void)
 	tmp = getline(&string, &size, stdin);
 	if (tmp == EOF)
 	{
-		free(string);
+		if (isatty(STDIN_FILENO))
+			write(1, "\n", 1);
 		exit(0);
 	}
 	if (tmp == 1)
@@ -66,6 +67,7 @@ int check_for_builtin(char **args, char *string, char **env)
 		{"exit", exit_simple_shell},
 		{"env", env_simple_shell},
 		{"help", help_function},
+		{"cd", cd_function},
 		{NULL, NULL}
 	};
 	int i;
@@ -127,6 +129,7 @@ int builtin_checker(char **args)
 		{"exit", exit_simple_shell},
 		{"env", env_simple_shell},
 		{"help", help_function},
+		{"cd", cd_function},
 		{NULL, NULL}
 	};
 

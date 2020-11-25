@@ -49,4 +49,5 @@ char *read_dir(char *mistake, struct dirent *s, char *fil, int l, char *fp, char
 char *look_path(char *filename, char *tmp, char *mistake);
 void ctrl_c(int i);
 void help_function(char **args, char *string ,char **env);
+void cd_function(char **args, char *string, char **env);
 #endif
