@@ -16,12 +16,6 @@ char *getline_v2(void)
 		free (string);
 		exit(0);
 	}
-	if (tmp < 0)
-	{
-		if (isatty(STDIO_FILENO))
-			write(1, "\n", 1);
-		exit(EXIT_FAILURE);
-	}
 	if (tmp == 1)
 	{
 		free(string);
