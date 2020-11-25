@@ -18,7 +18,8 @@ char *_getenv(char *env)
 		if (_strcmp(environ[i], env) == 0)
 			temp = environ[i];
 		i++;
-		}
+	}
+
 	while (temp[n] != '\0')
 	{
 		if (_strcmp(temp, env) == 0)
