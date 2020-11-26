@@ -42,7 +42,7 @@ char **split_line_v2(char *string)
 	if (!tokens)
 	{
 		perror("Could not allocate space for tokens\n");
-		exit(2);
+		exit(0);
 	}
 	token = strtok(string, TOKEN_DELIMITERS);
 	while (token)
