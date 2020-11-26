@@ -10,13 +10,9 @@
 
 void simple_shell(int ac, char **av, char **env)
 {
-	char *string;
+	char *string, *mistake, *file, *tmp = NULL;
 	char **args;
-	int status = 1;
-	char *tmp = NULL;
-	char *mistake;
-	char *file;
-	int flow;
+	int status = 1, flow;
 
 	mistake = "error";
 
@@ -24,6 +20,11 @@ void simple_shell(int ac, char **av, char **env)
 	do {
 		prompt();
 		string = getline_v2();
+		if (string == 0)
+		{
+			free(string);
+			continue;
+		}
 		args = split_line_v2(string);
 		flow = builtin_caller(args[0], args);
 		if (flow == 2)
@@ -32,7 +33,7 @@ void simple_shell(int ac, char **av, char **env)
 			args[0] = look_path(args[0], tmp, mistake);
 			if (args[0] == mistake)
 			{
-				args[0] = cwd(file, mistake);
+				args[0] = check_wd(file, mistake);
 				if (args[0] == file)
 					write(1, mistake, 5);
 			}

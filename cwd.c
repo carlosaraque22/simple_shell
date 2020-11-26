@@ -1,12 +1,12 @@
 #include "simple_shell.h"
 /**
- * cwd - search the current working directory.
+ * check_wd - check if there is an executable file.
  * @file: this is the file name.
  * @mistake: the error.
  * Return: the current working dir.
  */
 
-char *cwd(char *file, char *mistake)
+char *check_wd(char *file, char *mistake)
 {
 	DIR *dir;
 	struct dirent *sd;
