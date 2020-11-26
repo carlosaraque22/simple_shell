@@ -11,8 +11,7 @@ char *check_wd(char *file, char *mistake)
 	DIR *dir;
 	struct dirent *sd;
 	char *ret;
-	int len = 0;
-	int i = 0;
+	int len = 0, i = 0;
 
 	while (file[len])
 		len++;
@@ -32,9 +31,8 @@ char *check_wd(char *file, char *mistake)
 		{
 			if (sd->d_name[i] != file[i])
 				break;
-       /* checks if has something inside, if it does not have, error */
 			if (i == (len - 1) && (sd->d_name[i + 1]))
-     /* takes all the lenght and position the pointer in the first position */
+      /* takes all the lenght and position the pointer in the first position */
 			{
 				strcpy(ret, "./");
 				strcat(ret, file);
@@ -43,6 +41,8 @@ char *check_wd(char *file, char *mistake)
 					return (ret);
 					write(2, mistake, 5);
 			}
+			perror("");
+			exit(127);
 		}
 	}
 	closedir(dir);
