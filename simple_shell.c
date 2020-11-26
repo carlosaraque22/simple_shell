@@ -36,6 +36,7 @@ void simple_shell(int ac, char **av, char **env)
 				args[0] = check_wd(file, mistake);
 				if (args[0] == file)
 					write(1, mistake, 5);
+				exit(127);
 			}
 		}
 		if (args[0] != mistake)

@@ -41,8 +41,6 @@ char *check_wd(char *file, char *mistake)
 					return (ret);
 					write(2, mistake, 5);
 			}
-			perror("");
-			exit(127);
 		}
 	}
 	closedir(dir);
