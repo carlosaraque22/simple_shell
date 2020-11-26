@@ -30,7 +30,8 @@ char *check_wd(char *file, char *mistake)
      /* second condition check the content inside of the files, directories */
 		{
 			if (sd->d_name[i] != file[i])
-				break;
+				perror("");
+			exit(127);
 			if (i == (len - 1) && (sd->d_name[i + 1]))
       /* takes all the lenght and position the pointer in the first position */
 			{
